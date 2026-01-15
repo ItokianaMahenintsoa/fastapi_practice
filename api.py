@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from todo import todo_router
+from router.retrieve.todo import todo_router_retrieve
 
 app = FastAPI()
 
@@ -9,3 +10,4 @@ async def welcome() -> dict:
 
 #Include todo router
 app.include_router(todo_router)
+app.include_router(todo_router_retrieve)
